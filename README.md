@@ -15,9 +15,13 @@ Whack-a-Mole is a fun and interactive browser game where players click on moles 
 
 ## Screenshots
 ![Gameplay Screenshot](./screenshot.png)  <!-- optional -->
+<img width="1920" height="1080" alt="609446841_888688880386527_4258636688216835230_n" src="https://github.com/user-attachments/assets/a32e967e-9bf1-43e9-933e-ff0a23bd0785" />
 
-## Features
-- Animated start screen with instructions.
+
+## Features<img width="1920" height="1080" alt="607630476_1594196968442459_6192753868825421901_n" src="https://github.com/user-attachments/assets/9a568e77-f758-4e97-8ff5-f84148b2bf16" />
+
+- Animated start screen with instructions.<img width="1920" height="1080" alt="611599684_2678208445852662_4752845442433663523_n" src="https://github.com/user-attachments/assets/9bb9858f-a3c1-46ca-baef-eeb866a74a46" />
+
 - Custom hammer cursor animation.
 - Sound effects for hits and game over.
 - Background music loop.

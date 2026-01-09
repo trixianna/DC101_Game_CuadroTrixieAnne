@@ -1,0 +1,56 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width", initial-scale="1.0">
+            <title> whack a mole </title>
+            <link rel="stylesheet" href="style.css">
+           
+        </head>
+
+        <body>
+
+   <!-- START SCREEN -->
+<div id="startScreen">
+    <h1 class="title">Whack-a-Mole</h1>
+
+    <div class="instructions">
+        <p> Click the mole to earn points</p>
+        <p> Avoid the piranha plant</p>
+        <p> Score as high as you can!</p>
+    </div>
+
+    
+    <!-- MODE SELECTION -->
+    <div id="modeSelection">
+       <button id="modeEndless" class="modeBtn">Endless Mode</button>
+       <button id="modeChallenge" class="modeBtn">30s Challenge</button>
+    </div>
+
+    <button id="startBtn">START GAME</button>
+</div>
+
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" style="display:none;">
+        <h1>Whack-a-Mole</h1>
+       <h2 id="timer">Time: 30</h2>
+       <h2 id="score">Score: 0</h2>
+     <h3 id="highScore">High Score: 0</h3>
+        <button id="restartBtn" style="display:none;">Play Again</button>
+        <div id="board"></div>
+    </div>
+
+    <div id="hammer"></div>
+
+    <!-- GAME OVER SCREEN -->
+<div id="gameOverScreen" style="display:none;">
+    <h1 class="gameOverTitle">GAME OVER</h1>
+    <p id="finalScore">Score: 0</p>
+    <button id="playAgainBtn">PLAY AGAIN</button>
+     <button id="backHomeBtn">BACK TO HOME</button>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+    </html>

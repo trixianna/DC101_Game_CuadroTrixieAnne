@@ -1,0 +1,257 @@
+    body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        text-align: center;
+        background:url(./FOREST.jpg);
+        background-size:cover;
+    }
+
+    #board {
+        width: 540px;
+        height: 540px;
+        /*background-color: green; */
+
+        margin: 0 auto;
+        display:flex;
+        flex-wrap: wrap;
+
+        background: url("./soil.png");
+        background-size: cover;
+        border:3px solid white;
+        border-radius: 25px;
+    }
+
+    #board div {
+        /* board = 540x540, divide into 3x3 tiles --. 180x180 per div */
+        width: 180px;
+        height: 180px;
+        background-image: url("./pipe.png");
+        background-size: cover;
+    }
+
+    #board div img {
+            width: 100px;
+            height: 100px;
+
+            user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    #restartBtn {
+        display: none;                 /* initially hidden */
+        position: fixed;               /* fixed sa screen */
+        bottom: 30px;                  /* 30px from bottom */
+        left: 50%;                     /* center horizontally */
+        transform: translateX(-50%);   /* exactly center */
+        
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #ff4d4d, #ff944d);
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        animation: pulse 1.5s infinite;
+    }
+
+    #restartBtn:hover {
+        transform: translateX(-50%) scale(1.1); /* scale on hover */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    @keyframes pulse {
+        0% { transform: translateX(-50%) scale(1); }
+        50% { transform: translateX(-50%) scale(1.05); }
+        100% { transform: translateX(-50%) scale(1); }
+    }
+    #hammer {
+    position: absolute;
+    width: 128px;  /* hammer size */
+    height: 128px;
+    background: url("HAMMER.png") no-repeat center center;
+    background-size: contain;
+    pointer-events: none; /* para hindi maka-interfere sa clicks */
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform 0.1s ease;
+    z-index: 9999; /* nasa ibabaw ng lahat */
+    }
+
+    #hammer.hit {
+    transform: translate(-50%, -50%) rotate(-25deg);
+    }
+
+    #startScreen {
+        height: 100vh;
+        background: url("./FOREST.jpg") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .title {
+        font-size: 70px;
+        color: rgb(17, 2, 2);
+        font-weight: bold;
+        text-shadow: 3px 3px 10px black;
+        animation: floatTitle 2s ease-in-out infinite;
+    }
+
+    @keyframes floatTitle {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+
+    .instructions p {
+        font-size: 22px;
+        color: rgb(17, 2, 2);
+        margin: 10px 0;
+        animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    #startBtn {
+        margin-top: 40px;
+        padding: 25px 80px;
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        color: rgb(17, 2, 2);
+        background: linear-gradient(45deg, #ff4d4d, #ff944d);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        animation: bounce 1.5s infinite;
+    }
+
+    #startBtn:hover {
+        transform: scale(1.15);
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+
+    #gameOverScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        z-index: 9999;
+        animation: fadeIn 0.8s ease;
+    }
+
+    .gameOverTitle {
+        font-size: 90px;
+        color: red;
+        text-shadow: 5px 5px 20px black;
+        animation: shake 0.8s ease;
+    }
+
+    #finalScore {
+        font-size: 40px;
+        margin: 20px 0;
+    }
+
+    #playAgainBtn {
+        padding: 20px 60px;
+        font-size: 28px;
+        font-weight: bold;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        background: linear-gradient(45deg, #ff4d4d, #ff944d);
+        animation: bounce 1.5s infinite;
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        50% { transform: translateX(10px); }
+        75% { transform: translateX(-10px); }
+        100% { transform: translateX(0); }
+    }
+
+    /* ===== MODE BUTTONS & ANIMATIONS ===== */
+.modeBtn {
+    padding: 20px 60px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4d94ff, #4dd2ff);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: bounce 1.5s infinite;
+    transition: all 0.3s ease;
+}
+
+.modeBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* SELECTED MODE */
+.modeBtn.selected {
+    background: linear-gradient(45deg, #ff944d, #ff4d4d);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animated text for scores and timer */
+#score, #timer, #finalScore {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#backHomeBtn {
+    padding: 20px 60px;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #4d94ff, #4dd2ff);
+    animation: bounce 1.5s infinite;
+}
+
+#backHomeBtn:hover {
+    transform: scale(1.1);
+}
